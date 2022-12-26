@@ -7,11 +7,12 @@ export const theme = {
       primary: '#07c',
       secondary: '#05a',
       
-      muted: '#f6f6f6',
+      
 
       white: '#ffffff',
       text: '#eee',
       accent: '#145974',
+      bgcolor: '#64edcf',
       darkblue: '#00008b',
     },
     space: [0, 2, 4, 8, 12, 16, 18, 32, 64, 128, 256],
