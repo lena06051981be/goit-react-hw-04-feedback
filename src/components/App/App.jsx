@@ -3,14 +3,18 @@ import Section from 'components/Section/Section.jsx';
 import Statistics from 'components/Statistics/Statistics.jsx';
 import React from 'react'
 import  FeedbackOptions  from '../Feedback/Feedback.jsx'
+import { useState } from 'react';
 
-
-class App extends React.Component {
-  state = {
-    good: 0,
-    neutral: 0,
-    bad: 0,
-  };
+const App = () => {
+// class App extends React.Component {
+  const [good, setGood] = useState(0);
+  const [neutral, setNeutral] = useState(0);
+  const [bad, setBad] = useState(0);
+  // state = {
+  //   good: 0,
+  //   neutral: 0,
+  //   bad: 0,
+  // };
 
   ratingButtonClick = item => {
     this.setState(prevState => ({
@@ -28,8 +32,8 @@ class App extends React.Component {
   countPositiveFeedbackPercentage = () => 
   Math.round((this.state.good / this.countTotalFeedback()) * 100);
 
-  render() {
-    const { good, neutral, bad } = this.state;
+  // render() {
+    // const { good, neutral, bad } = this.state;
     const positiveFeedback =this.countPositiveFeedbackPercentage();
     const totalFeedback = this.countTotalFeedback();
 
@@ -59,7 +63,7 @@ class App extends React.Component {
         </Section>        
       </>
     )
-  } 
+  // } 
 }
 
 
