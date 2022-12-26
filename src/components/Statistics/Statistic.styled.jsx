@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const StatisticsList = styled.ul`
     list-style: none;
-    padding: 0;
+    padding: ${p => p.theme.space[0]}px;
     margin: 0 0 0 40px;
 
     text-align: start;
