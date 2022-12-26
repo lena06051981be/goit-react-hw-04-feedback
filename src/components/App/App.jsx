@@ -16,7 +16,7 @@ const App = () => {
   //   bad: 0,
   // };
 
-  ratingButtonClick = item => {
+  const ratingButtonClick = item => {
     this.setState(prevState => ({
       [item]: prevState[item] + 1,
     })); 
@@ -26,16 +26,16 @@ const App = () => {
   // ratingButtonClick = () => {this.setState({
   //   good: this.state.good + 33})};
 
-  countTotalFeedback = () => 
+  const countTotalFeedback = () => 
   Object.values(this.state).reduce((acc, value) => acc + value);
 
-  countPositiveFeedbackPercentage = () => 
-  Math.round((this.state.good / this.countTotalFeedback()) * 100);
+  const countPositiveFeedbackPercentage = () => 
+  Math.round((good / countTotalFeedback()) * 100);
 
   // render() {
     // const { good, neutral, bad } = this.state;
-    const positiveFeedback =this.countPositiveFeedbackPercentage();
-    const totalFeedback = this.countTotalFeedback();
+    const positiveFeedback = countPositiveFeedbackPercentage();
+    const totalFeedback = countTotalFeedback();
 
     return (
       <>
