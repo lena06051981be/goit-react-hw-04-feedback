@@ -6,28 +6,27 @@ import  FeedbackOptions  from '../Feedback/Feedback.jsx'
 import { useState } from 'react';
 
 const App = () => {
-// class App extends React.Component {
   const [good, setGood] = useState(0);
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
-  // state = {
-  //   good: 0,
-  //   neutral: 0,
-  //   bad: 0,
-  // };
 
   const ratingButtonClick = item => {
-    this.setState(prevState => ({
-      [item]: prevState[item] + 1,
-    })); 
-    console.log(item);
-  };
- 
-  // ratingButtonClick = () => {this.setState({
-  //   good: this.state.good + 33})};
-
-  // const countTotalFeedback = () => 
-  // Object.values(this.state).reduce((acc, value) => acc + value);
+    switch (item) {
+      case 'good':
+        setGood(prevState => prevState + 1);
+        // console.log('good: ', good);
+        break;
+      case 'neutral':
+        setNeutral(prevState => prevState + 1);
+        // console.log('neutral: ', neutral);
+        break;
+      case 'bad':
+        setBad(prevState => prevState + 1);
+        // console.log('bad: ', bad);
+        break;
+      default:
+    }
+  } 
 
   const countTotalFeedback = () => {
     const total = good + neutral + bad;
@@ -37,41 +36,36 @@ const App = () => {
   const countPositiveFeedbackPercentage = () => 
   Math.round((good / countTotalFeedback()) * 100);
 
-  // render() {
-    // const { good, neutral, bad } = this.state;
-    const positiveFeedback = countPositiveFeedbackPercentage();
-    const totalFeedback = countTotalFeedback();
+  const positiveFeedback = countPositiveFeedbackPercentage();
+  const totalFeedback = countTotalFeedback();
 
-    return (
-      <>
-        <Section title={"Please leave feedback"}>
-          <FeedbackOptions 
-            // options={Object.keys(this.state)}
-            options={['good', 'neutral', 'bad']}
-            onLeaveFeedback={ratingButtonClick} 
-          />
-        </Section>
+  return (
+    <>
+      <Section title={"Please leave feedback"}>
+        <FeedbackOptions 
+          // options={Object.keys(this.state)}
+          options={['good', 'neutral', 'bad']}
+          onLeaveFeedback={ratingButtonClick} 
+        />
+      </Section>
 
-        <Section title="Statistics:">
-          {totalFeedback ? ( 
-              <Statistics 
-                good={good}
-                neutral={neutral}
-                bad={bad}
-                total={countTotalFeedback()}
-                PositivePercentage=
-                {positiveFeedback ? positiveFeedback : 0 }
-              />           
-            ) : (    
-              <Notification  message="There is no one feedback" />      
-               )                          
-          }          
-        </Section>        
-      </>
-    )
-  // } 
+      <Section title="Statistics:">
+        {totalFeedback ? ( 
+            <Statistics 
+              good={good}
+              neutral={neutral}
+              bad={bad}
+              total={countTotalFeedback()}
+              PositivePercentage=
+              {positiveFeedback ? positiveFeedback : 0 }
+            />           
+          ) : (    
+            <Notification  message="There is no one feedback" />      
+             )                          
+        }          
+      </Section>        
+    </>
+  )  
 }
 
-
 export default App
-
