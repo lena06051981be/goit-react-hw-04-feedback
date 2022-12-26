@@ -7,12 +7,12 @@ export const StatisticsList = styled.ul`
 
     text-align: start;
     text-transform: capitalize;
-    font-size: 25px;
-    font-weight: 600;
-    color: darkblue;
+    font-size: ${p => p.theme.fontSizes.l};
+    font-weight: ${p => p.theme.fontWeights.semibold};
+    color: ${p => p.theme.colors.darkblue};
     /* text-shadow: 1px 1px 1px #f7f7f79f; */
 
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: ${p => p.theme.space[2]}px;
 `

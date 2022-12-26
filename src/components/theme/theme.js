@@ -1,15 +1,20 @@
 export const theme = {
     colors: {
       black: '#000',
-      white: '#fff',
-      text: '#000',
-      bcg: '#fff',
+      
+      
+      
       primary: '#07c',
       secondary: '#05a',
-      accent: '#669df6',
+      
       muted: '#f6f6f6',
+
+      white: '#ffffff',
+      text: '#eee',
+      accent: '#145974',
+      darkblue: '#00008b',
     },
-    space: [0, 2, 4, 8, 16, 20, 32, 64, 128, 256],
+    space: [0, 2, 4, 8, 12, 16, 18, 32, 64, 128, 256],
     fonts: {
       body: 'system-ui, sans-serif',
       heading: 'system-ui, sans-serif',
@@ -19,11 +24,13 @@ export const theme = {
       xs: '12px',
       s: '14px',
       m: '16px',
-      l: '28px',
+      l: '25px',
       xl: '42px',
     },
     fontWeights: {
       normal: 400,
+      notify: 500,
+      semibold: 600,
       bold: 700,
     },
     lineHeights: {
