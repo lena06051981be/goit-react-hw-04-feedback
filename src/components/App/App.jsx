@@ -26,8 +26,13 @@ const App = () => {
   // ratingButtonClick = () => {this.setState({
   //   good: this.state.good + 33})};
 
-  const countTotalFeedback = () => 
-  Object.values(this.state).reduce((acc, value) => acc + value);
+  // const countTotalFeedback = () => 
+  // Object.values(this.state).reduce((acc, value) => acc + value);
+
+  const countTotalFeedback = () => {
+    const total = good + neutral + bad;
+    return total;
+  }
 
   const countPositiveFeedbackPercentage = () => 
   Math.round((good / countTotalFeedback()) * 100);
@@ -41,8 +46,9 @@ const App = () => {
       <>
         <Section title={"Please leave feedback"}>
           <FeedbackOptions 
-            options={Object.keys(this.state)}
-            onLeaveFeedback={this.ratingButtonClick} 
+            // options={Object.keys(this.state)}
+            options={['good', 'neutral', 'bad']}
+            onLeaveFeedback={ratingButtonClick} 
           />
         </Section>
 
@@ -52,7 +58,7 @@ const App = () => {
                 good={good}
                 neutral={neutral}
                 bad={bad}
-                total={this.countTotalFeedback()}
+                total={countTotalFeedback()}
                 PositivePercentage=
                 {positiveFeedback ? positiveFeedback : 0 }
               />           
