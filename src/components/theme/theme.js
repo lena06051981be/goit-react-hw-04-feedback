@@ -1,14 +1,5 @@
 export const theme = {
     colors: {
-      black: '#000',
-      
-      
-      
-      primary: '#07c',
-      secondary: '#05a',
-      
-      
-
       white: '#ffffff',
       text: '#eee',
       accent: '#145974',
@@ -46,7 +37,7 @@ export const theme = {
       none: '0',
       s: '4px',
       m: '8px',
-      lg: '16px',
+      lg: '12px',
       round: '50%',
     },
 };

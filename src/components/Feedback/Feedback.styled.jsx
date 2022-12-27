@@ -14,7 +14,7 @@ export const FeedbackBtn = styled.button`
     cursor: pointer;
     padding: 10px 20px;
     border: none;
-    border-radius: ${p => p.theme.space[4]}px;
+    border-radius: ${p => p.theme.radii.lg};
 
     background-color: ${p => p.theme.colors.white};
     color: ${p => p.theme.colors.darkblue};

@@ -7,7 +7,7 @@ export const SectionStyle = styled.section`
     min-width: 340px;
     max-width: 420px;
     
-    border-radius: ${p => p.theme.space[4]}px;
+    border-radius: ${p => p.theme.radii.lg};
     border: 1px solid darkcyan;
     box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.15);
     
