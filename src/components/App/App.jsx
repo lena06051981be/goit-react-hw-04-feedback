@@ -25,6 +25,7 @@ const App = () => {
         // console.log('bad: ', bad);
         break;
       default:
+        return; // необязательно ставить
     }
   } 
 
